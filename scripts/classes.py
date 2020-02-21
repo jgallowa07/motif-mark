@@ -55,6 +55,7 @@ class MotifController(object):
         pattern to account for sequence ambiguity.
         """
 
+        # TODO question: how do we deal with U?
         pattern_dict = {
             "U":"T", "u":"t",
             "Y":"[CT]", "R":"[AG]", "W":"[AT]", "S":"[GC]", "K":"[TG]", "M":"[CA]",
@@ -110,7 +111,6 @@ class SequenceInformation(object):
 
         self._extract_motif_information(sequence, motif_controller)
         # TODO start/end position from header
-        # TODO exons 
 
     def _extract_motif_information(self, sequence, mot_con):
         """
@@ -128,11 +128,18 @@ class SequenceInformation(object):
             - [(motif position / motif type_index)]
             
         """
-        
+        exon_flag = False
         for motif_idx, (pattern, motif) in enumerate(zip(mot_con.patterns,mot_con.motifs)):
             window_size = len(motif)
             for seq_idx in range(self.length - window_size + 1):
-                # TODO check for exon start/end
+
+                # TODO question : is there only one exon per seq?
+                if str.isupper(sequence[seq_idx]) and not exon_flag:
+                    self.exon_start = seq_idx
+                    exon_flag = True
+                if exon_flag and str.islower(sequence[seq_idx]):
+                    self.exon_end = seq_idx
+                    exon_flag = False
                 
                 match = re.match(pattern, sequence[seq_idx:seq_idx + window_size])
                 if match == None:
@@ -147,7 +154,7 @@ class SequenceInformation(object):
         return None
             
             
-            
+# TODO            
 class SequenceDrawer(object):
     """
     This class will handle drawing sequences

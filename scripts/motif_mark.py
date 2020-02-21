@@ -51,6 +51,7 @@ if __name__ == "__main__":
     for motif in seq_info.motifs:
         print(f"start: {motif.start_position}, end: {motif.end_position}, m_idx: \
 {motif.motif_index}, sequence: {first[1][motif.start_position:motif.end_position]}")
+    print(f"exon start: {seq_info.exon_start}, exon_end: {seq_info.exon_end}")
 
     
 
