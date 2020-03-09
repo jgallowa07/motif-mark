@@ -41,7 +41,6 @@ running
 `cd scripts && python3 motif_mark.py -fasta ../test_files/Figure_1.fasta -motifs ../test_files/Fig_1_motifs.txt -out example.pdf -cmap plasma`
 
 will produce 
-
 ![alt text](<./test_files/example.png>)
 
 
