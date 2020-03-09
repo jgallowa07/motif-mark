@@ -11,7 +11,7 @@ and be sure to install all listed in `requirements.txt`
 
 ## Usage
 
-```bash
+```
 usage: motif_mark.py [-h] [-fasta FASTA] [-motifs MOTIFS] [-cmap CMAP]
                      [-out OUT]
 
