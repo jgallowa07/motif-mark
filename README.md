@@ -42,7 +42,7 @@ running
 
 will produce 
 
-![alt text](./test_files/example.png)
+![alt text](<./test_files/example.png>)
 
 
 
