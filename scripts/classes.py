@@ -12,8 +12,6 @@ to be used when drawing motifs.
 import io
 import sys
 import re
-import numpy as np
-import numpy as np
 import cairo
 import matplotlib.pyplot as plt
 from matplotlib import cm

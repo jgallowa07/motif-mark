@@ -2,7 +2,6 @@
 import argparse
 from collections import defaultdict
 import sys
-import numpy as np
 from helpers import *
 from classes import *
 
