@@ -206,7 +206,7 @@ class SequenceDrawer(object):
             y = top_left_y + (i * (legend_margins / self.height)) + ((legend_margins / self.height) / 2)
             width = box_text_margin / self.width
 
-            self.ctx.rectangle(top_left_x + (legend_margins / self.width), y, width, width)
+            self.ctx.rectangle(top_left_x + (legend_margins / self.width), y - width / 2, width, width)
             r = self.motif_controller.colors[i][0]
             g = self.motif_controller.colors[i][1]
             b = self.motif_controller.colors[i][2]
