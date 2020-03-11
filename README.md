@@ -1,4 +1,4 @@
-# motif-mark
+
 
 Motif Mark is a simple application which allows us to visualize 
 certain motifs of interest in sequences from multi-line fasta files.

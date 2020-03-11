@@ -133,9 +133,7 @@ class SequenceInformation(object):
                     exon_flag = False
                 
                 match = re.match(pattern, sequence[seq_idx:seq_idx + window_size].lower())
-                if match == None:
-                    continue
-                else:
+                if match != None:
                     self.motifs.append(MotifPattern(
                         start_position = seq_idx,
                         end_position = seq_idx + window_size,
